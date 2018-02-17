@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      tidbit:
+        title: タイトル
+        content: 内容
