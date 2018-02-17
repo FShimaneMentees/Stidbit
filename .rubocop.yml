@@ -1,0 +1,60 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - config/**/*
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - db/fixtures/*
+    - vendor/**/*
+    - test/**/*
+    - spec/spec_helper.rb
+    - spec/rails_helper.rb
+    - Gemfile
+    - Guardfile
+    - Rakefile
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 30
+
+Style/Documentation:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/ClassVars:
+  Enabled: false
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/SignalException:
+  EnforcedStyle: semantic
