@@ -16,6 +16,6 @@ class TidbitsController < ApplicationController
   end
 
   def show
-    @tidbit = Tidbit.find_by(id: params[:id])
+    @tidbit = Tidbit.find(params[:id])
   end
 end
