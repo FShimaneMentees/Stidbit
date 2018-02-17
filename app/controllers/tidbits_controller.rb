@@ -4,6 +4,7 @@ class TidbitsController < ApplicationController
   end
 
   def new
+    @tidbit = Tidbit.new
   end
 
   def create
@@ -11,7 +12,10 @@ class TidbitsController < ApplicationController
       title: params[:title],
       content: params[:content]
     )
-    @tidbit.save
-    redirect_to("/")
+    if @tidbit.save
+      redirect_to('/')
+    else
+      render('new')
+    end
   end
 end

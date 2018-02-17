@@ -1,11 +1,16 @@
 <%= form_tag("/create") do %>
+  <% @tidbit.errors.full_messages.each do |message| %>
+    <div>
+      <%= message %>
+    </div>
+  <% end %>
   <div>
     <p>タイトル</p>
-    <textarea name="title"></textarea>
+    <textarea name="title"><%= @tidbit.title %></textarea>
   </div>
   <div>
     <p>内容</p>
-    <textarea name="content"></textarea>
+    <textarea name="content"><%= @tidbit.content %></textarea>
   </div>
   <input type="submit" value="投稿">
 <% end %>
