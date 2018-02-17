@@ -14,4 +14,8 @@ class TidbitsController < ApplicationController
     @tidbit.save
     redirect_to("/")
   end
+
+  def show
+    @tidbit = Tidbit.find_by(id: params[:id])
+  end
 end
