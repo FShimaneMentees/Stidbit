@@ -19,4 +19,8 @@ class TidbitsController < ApplicationController
       render('new')
     end
   end
+
+  def show
+    @tidbit = Tidbit.find(params[:id])
+  end
 end
