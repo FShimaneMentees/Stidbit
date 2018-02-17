@@ -53,3 +53,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'seed-fu', '~> 2.3'
+
+gem 'rails-i18n'
