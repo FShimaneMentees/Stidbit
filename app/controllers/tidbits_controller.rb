@@ -1,6 +1,6 @@
 class TidbitsController < ApplicationController
   def index
-    @tidbits = Tidbit.all
+    @tidbits = Tidbit.all.order(created_at: :desc)
   end
 
   def new
