@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/signup' =>'users#new'
+  post '/users/create'
+
   get '/' => 'tidbits#index'
   get '/new' => 'tidbits#new'
   post '/create' => 'tidbits#create'
