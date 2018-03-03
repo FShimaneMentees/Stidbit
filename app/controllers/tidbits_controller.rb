@@ -1,4 +1,6 @@
 class TidbitsController < ApplicationController
+  before_action :authenticate_user, only: %i[new create]
+
   def index
     @tidbits = Tidbit.all.order(created_at: :desc)
   end

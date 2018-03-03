@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :forbid_login_user, except: :logout
+
   def new
     @user = User.new
   end
