@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/signup' => 'users#new'
   post '/users/create'
-  get '/login' => 'users#login_form'
-  post '/login' => 'users#login'
-  post '/logout' => 'users#logout'
+  get '/login' => 'sessions#login_form'
+  post '/login' => 'sessions#login'
+  post '/logout' => 'sessions#logout'
 
   get '/' => 'tidbits#index'
   get '/new' => 'tidbits#new'
