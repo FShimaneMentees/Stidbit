@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :forbid_current_user
+
   def new
     @user = User.new
   end
@@ -10,10 +12,10 @@ class UsersController < ApplicationController
       password: params[:password]
     )
     if @user.save
-      flash[:notice] = 'ユーザーを作成しました。'
-      redirect_to('/')
+      session[:user_id] = @user.id
+      redirect_home('ユーザーを作成しました')
     else
-      render('new')
+      render 'new'
     end
   end
 end

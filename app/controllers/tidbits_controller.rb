@@ -1,4 +1,6 @@
 class TidbitsController < ApplicationController
+  before_action :authenticate_user, only: %i[new create]
+
   def index
     @tidbits = Tidbit.all.order(created_at: :desc)
   end
@@ -13,10 +15,9 @@ class TidbitsController < ApplicationController
       content: params[:content]
     )
     if @tidbit.save
-      flash[:notice] = '豆記事を投稿しました。'
-      redirect_to('/')
+      redirect_home('豆記事を投稿しました')
     else
-      render('new')
+      render 'new'
     end
   end
 
