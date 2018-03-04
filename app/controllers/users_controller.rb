@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     )
     if @user.save
       session[:user_id] = @user.id
-      redirect_to ({controller: 'tidbits', action: 'index'}), notice: 'ユーザーを作成しました'
+      redirect_home('ユーザーを作成しました')
     else
       render 'new'
     end

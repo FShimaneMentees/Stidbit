@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
   def forbid_current_user
     return unless user_signed_in?
 
-    redirect_to ({controller: 'tidbits', action: 'index'}), notice: 'すでにログインしています'
+    redirect_home('すでにログインしています')
+  end
+
+  def redirect_home(msg)
+    redirect_to ({controller: 'tidbits', action: 'index'}), notice: msg
   end
 end

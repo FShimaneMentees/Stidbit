@@ -15,7 +15,7 @@ class TidbitsController < ApplicationController
       content: params[:content]
     )
     if @tidbit.save
-      redirect_to '/', notice: '豆記事を投稿しました。'
+      redirect_home('豆記事を投稿しました')
     else
       render 'new'
     end

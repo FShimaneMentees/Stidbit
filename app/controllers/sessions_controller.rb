@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     )
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to ({controller: 'tidbits', action: 'index'}), notice: 'ログインしました'
+      redirect_home('ログインしました')
     else
       @email = params[:email]
       @password = params[:password]
