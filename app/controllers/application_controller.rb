@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
   before_action :current_user
   helper_method :current_user, :user_signed_in?
 
-  private 
-  
+  private
+
   def current_user
     @current_user = User.find_by(id: session[:user_id])
   end
-  
+
   def user_signed_in?
     @current_user != nil
   end
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     return if user_signed_in?
 
-    redirect_to ({controller: 'sessions', action: 'login'}), notice: 'ログインが必要です'
+    redirect_to ({ controller: 'sessions', action: 'login' }), notice: 'ログインが必要です'
   end
 
   def forbid_current_user
@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_home(msg)
-    redirect_to ({controller: 'tidbits', action: 'index'}), notice: msg
+    redirect_to ({ controller: 'tidbits', action: 'index' }), notice: msg
   end
 end
