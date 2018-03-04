@@ -16,14 +16,12 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     return if user_signed_in?
 
-    flash[:notice] = 'ログインが必要です'
-    redirect_to('/login')
+    redirect_to ({controller: 'sessions', action: 'login'}), notice: 'ログインが必要です'
   end
 
   def forbid_current_user
     return unless user_signed_in?
 
-    flash[:notice] = 'すでにログインしています'
-    redirect_to('/')
+    redirect_to ({controller: 'tidbits', action: 'index'}), notice: 'すでにログインしています'
   end
 end

@@ -15,10 +15,9 @@ class TidbitsController < ApplicationController
       content: params[:content]
     )
     if @tidbit.save
-      flash[:notice] = '豆記事を投稿しました。'
-      redirect_to('/')
+      redirect_to '/', notice: '豆記事を投稿しました。'
     else
-      render('new')
+      render 'new'
     end
   end
 
