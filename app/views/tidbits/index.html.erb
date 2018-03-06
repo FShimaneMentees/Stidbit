@@ -4,6 +4,9 @@
       <%= tidbit.title %>
       <%= tidbit.content %>
       <%= link_to "詳細", "/show/#{tidbit.id}"%>
+      <span id="like-of-<%= tidbit.id %>">
+        <%= render partial: 'likes/like', locals: { tidbit: tidbit } %>
+      </span>
     </li>
   <% end %>
 </ul>
