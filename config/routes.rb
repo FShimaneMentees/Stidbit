@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get '/new' => 'tidbits#new'
   post '/create' => 'tidbits#create'
   get '/show/:id' => 'tidbits#show'
+
+  post '/likes/:tidbit_id/create' => 'likes#create'
+  post '/likes/:tidbit_id/destroy' => 'likes#destroy'
 end
