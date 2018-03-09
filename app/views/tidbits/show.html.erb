@@ -6,3 +6,7 @@
    <p>内容</p>
    <textarea name="content" readonly><%= @tidbit.content %></textarea>
  </div>
+
+ <span id="like-of-<%= @tidbit.id %>">
+   <%= render partial: 'likes/like', locals: { tidbit: @tidbit } %>
+ </span>
