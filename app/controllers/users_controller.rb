@@ -18,4 +18,8 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+  def my_page
+    @tidbits = Tidbit.all.order(created_at: :desc)
+  end
 end

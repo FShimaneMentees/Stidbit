@@ -1,9 +1,10 @@
 <ul>
   <% @tidbits.each do |tidbit| %>
     <li>
-      <%= tidbit.title %>
-      <%= tidbit.content %>
-      <%= link_to "詳細", "/show/#{tidbit.id}"%>
+      <span>タイトル: <%= tidbit.title %></span>
+      <span>内容: <%= tidbit.content %></span>
+      <span>ユーザー: <%= tidbit.user_id ? tidbit.user.name : '名無しさん' %></span>
+      <span><%= link_to "詳細", "/show/#{tidbit.id}"%></span>
       <span id="like-of-<%= tidbit.id %>">
         <%= render partial: 'likes/like', locals: { tidbit: tidbit } %>
       </span>

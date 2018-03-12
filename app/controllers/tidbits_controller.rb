@@ -11,6 +11,7 @@ class TidbitsController < ApplicationController
 
   def create
     @tidbit = Tidbit.new(
+      user_id: session[:user_id],
       title: params[:title],
       content: params[:content]
     )

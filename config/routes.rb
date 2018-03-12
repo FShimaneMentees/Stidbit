@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#login_form'
   post '/login' => 'sessions#login'
   post '/logout' => 'sessions#logout'
+  get '/mypage' => 'users#my_page'
 
   get '/' => 'tidbits#index'
   get '/new' => 'tidbits#new'
