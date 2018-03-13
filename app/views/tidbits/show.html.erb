@@ -1,12 +1,20 @@
- <div>
-   <p>タイトル</p>
-   <textarea name="title" readonly><%= @tidbit.title %></textarea>
- </div>
- <div>
-   <p>内容</p>
-   <textarea name="content" readonly><%= @tidbit.content %></textarea>
- </div>
-
- <span id="like-of-<%= @tidbit.id %>">
-   <%= render partial: 'likes/like', locals: { tidbit: @tidbit } %>
- </span>
+<div>
+  <div>
+    <p>タイトル: <%= @tidbit.title %></p>
+  </div>
+  <div>
+    <p>内容: <%= @tidbit.content %></p>
+  </div>
+  <span id="like-of-<%= @tidbit.id %>">
+    <%= render partial: 'likes/like', locals: { tidbit: @tidbit } %>
+  </span>
+</div>
+<div>
+  <h4>コメント</h4>
+  <% if user_signed_in? %>
+    <%= render partial: 'comments/form', locals: { comment: @comment, tidbit: @tidbit } %>
+  <% end %>
+  <div id="comments_area">
+    <%= render partial: 'comments/comment', locals: { comments: @comments } %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<%= form_tag("/comments/#{tidbit.id}/create", method: :post, remote: true) do %>
+  <div>
+    <textarea name="content"></textarea>
+  </div>
+  <div>
+    <input type="submit" value="コメントする">
+  </div>
+<% end %>
