@@ -25,4 +25,9 @@ class TidbitsController < ApplicationController
   def show
     @tidbit = Tidbit.find(params[:id])
   end
+
+  def destroy
+    @tidbit = Tidbit.find(params[:id]).destroy
+    redirect_to ({ controller: 'users', action: 'my_page' }), notice: 'まだ誰かの役に立ったかもしれない豆記事を削除しました'
+  end
 end

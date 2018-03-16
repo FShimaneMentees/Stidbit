@@ -1,8 +1,11 @@
+<p>マイページ</p>
+<p><%= current_user.name %>さんの 投稿した豆記事一覧</p>
 <ul>
   <% @tidbits.each do |tidbit| %>
     <li>
       <%= tidbit.title %>
       <%= tidbit.content %>
+      <%= link_to("削除", "/destroy/#{tidbit.id}", {method: :post}) %>
     </li>
   <% end %>
 </ul>
