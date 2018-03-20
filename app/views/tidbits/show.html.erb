@@ -11,6 +11,10 @@
 </div>
 <div>
   <h4>コメント</h4>
+
+  <div id="flash_area">
+    <%= render partial: 'comments/flash', locals: { message: @message } %>
+  </div>
   <% if user_signed_in? %>
     <%= render partial: 'comments/form', locals: { comment: @comment, tidbit: @tidbit } %>
   <% end %>

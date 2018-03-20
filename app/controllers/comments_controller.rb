@@ -6,7 +6,11 @@ class CommentsController < ApplicationController
       tidbit_id: params[:tidbit_id]
     )
     if @comment.save
+      @message = nil
       render :comment
+    else
+      @message = "コメントが保存できませんでした"
+      render :comment_flash
     end
   end
 end
