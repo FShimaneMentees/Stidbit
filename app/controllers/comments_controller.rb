@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       @message = nil
       render :comment
     else
-      @message = "コメントが保存できませんでした"
+      @message = 'コメントが保存できませんでした'
       render :comment_flash
     end
   end
