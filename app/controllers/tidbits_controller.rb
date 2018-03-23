@@ -23,5 +23,7 @@ class TidbitsController < ApplicationController
 
   def show
     @tidbit = Tidbit.find(params[:id])
+    @comment = Comment.new
+    @comments = @tidbit.comments
   end
 end
