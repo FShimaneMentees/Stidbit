@@ -1,5 +1,3 @@
 <% comments.each do |comment| %>
-  <% unless comment.id.nil? %>
-    <p><%= "#{comment.user.name}さん : #{comment.content}" %></p>
-  <% end %>
+  <p><%= "#{comment.user.name}さん : #{comment.content}" %></p>
 <% end %>
