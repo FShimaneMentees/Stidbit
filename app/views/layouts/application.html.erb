@@ -17,6 +17,9 @@
         </li>
         <% if user_signed_in? %>
           <li>
+            <%= link_to("マイページ", "/mypage") %>
+          </li>
+          <li>
             <%= link_to("新規投稿", "/new") %>
           </li>
           <li>

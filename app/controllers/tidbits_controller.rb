@@ -11,6 +11,7 @@ class TidbitsController < ApplicationController
 
   def create
     @tidbit = Tidbit.new(
+      user_id: session[:user_id],
       title: params[:title],
       content: params[:content]
     )
@@ -23,5 +24,10 @@ class TidbitsController < ApplicationController
 
   def show
     @tidbit = Tidbit.find(params[:id])
+  end
+
+  def destroy
+    Tidbit.find(params[:id]).destroy
+    redirect_to ({ controller: 'users', action: 'my_page' }), notice: 'まだ誰かの役に立ったかもしれない豆記事を削除しました'
   end
 end

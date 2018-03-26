@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#login_form'
   post '/login' => 'sessions#login'
   post '/logout' => 'sessions#logout'
+  get '/mypage' => 'users#my_page'
 
   get '/' => 'tidbits#index'
   get '/new' => 'tidbits#new'
   post '/create' => 'tidbits#create'
   get '/show/:id' => 'tidbits#show'
+  post '/destroy/:id' => 'tidbits#destroy'
 
   post '/likes/:tidbit_id/create' => 'likes#create'
   post '/likes/:tidbit_id/destroy' => 'likes#destroy'

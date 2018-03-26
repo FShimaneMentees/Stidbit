@@ -1,12 +1,13 @@
- <div>
-   <p>タイトル</p>
-   <textarea name="title" readonly><%= @tidbit.title %></textarea>
- </div>
- <div>
-   <p>内容</p>
-   <textarea name="content" readonly><%= @tidbit.content %></textarea>
- </div>
+<div>
+  <div><%= @tidbit.user_id ? @tidbit.user.name : '名無しさん' %></div>
+  <p>タイトル</p>
+  <textarea name="title" readonly><%= @tidbit.title %></textarea>
+</div>
+<div>
+  <p>内容</p>
+  <textarea name="content" readonly><%= @tidbit.content %></textarea>
+</div>
 
- <span id="like-of-<%= @tidbit.id %>">
-   <%= render partial: 'likes/like', locals: { tidbit: @tidbit } %>
- </span>
+<span id="like-of-<%= @tidbit.id %>">
+  <%= render partial: 'likes/like', locals: { tidbit: @tidbit } %>
+</span>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :forbid_current_user
+  before_action :forbid_current_user, except: :my_page
+  before_action :authenticate_user, only: :my_page
 
   def new
     @user = User.new
@@ -17,5 +18,9 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def my_page
+    @tidbits = Tidbit.where(user_id: session[:user_id]).order(created_at: :desc)
   end
 end
