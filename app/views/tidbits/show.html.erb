@@ -11,3 +11,27 @@
 <span id="like-of-<%= @tidbit.id %>">
   <%= render partial: 'likes/like', locals: { tidbit: @tidbit } %>
 </span>
+
+<p>コメント: <%= @comments.count %> 件</p>
+<% if user_signed_in? %>
+  <%= form_tag("/comments/#{@tidbit.id}/create") do %>
+    <% @comment.errors.full_messages.each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+    <div>
+      <textarea name="comment"><%= @comment.content %></textarea>
+    </div>
+    <input type="submit" value="コメントする">
+  <% end %>
+<% end %>
+
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <span><%= comment.user.name %> さん</span>
+      <span><%= comment.content %></span>
+    </li>
+  <% end %>
+</ul>

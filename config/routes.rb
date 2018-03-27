@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   post '/likes/:tidbit_id/create' => 'likes#create'
   post '/likes/:tidbit_id/destroy' => 'likes#destroy'
+
+  post '/comments/:tidbit_id/create' => 'comments#create'
 end
